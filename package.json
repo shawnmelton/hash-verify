@@ -1,0 +1,22 @@
+{
+  "name": "hudl-proxy-layer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shawnmelton/hudl-proxy-layer.git"
+  },
+  "author": "Shawn Melton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shawnmelton/hudl-proxy-layer/issues"
+  },
+  "homepage": "https://github.com/shawnmelton/hudl-proxy-layer#readme",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}
