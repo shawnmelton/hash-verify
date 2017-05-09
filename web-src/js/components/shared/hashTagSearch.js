@@ -1,30 +1,44 @@
 import React from 'react';
-
 import formValidator from '../../services/validators/hashTagForm';
-
 import template from '../../templates/components/shared/hashTagSearch';
+import storage from '../../services/data/localStorage';
 
 class HashTagSearch extends React.Component {
     constructor(props) {
         super(props);
 
+        this.hashTagEntry = null;
         this.state = {
             form: {
                 error: false,
                 button: {
-                    text: 'Go'
+                    text: 'Go',
+                    disabled: false
                 }
             }
         };
     }
 
+    _updateState(buttonText, formError) {
+        this.setState({
+            form: {
+                error: formError,
+                button: {
+                    text: buttonText,
+                    disabled: (buttonText === '...')
+                }
+            }
+        });
+    }
+
     processSubmit(e) {
         e.preventDefault();
-        this.updateButtonText('...');
-        if (formValidator.submissionIsValid()) {
-            
+        this._updateState('...', false);
+        if (this.hashTagEntry !== null && this.hashTagEntry.length > 2 && formValidator.submissionIsValid(this.hashTagEntry)) {
+            storage.setItem('hashtag', this.hashTagEntry);
+            this.props.history.push('/stream/'+ this.hashTagEntry);
         } else {
-            this.updateButtonText('Go');
+            this._updateState('Go', true);
         }
     }
 
@@ -33,18 +47,11 @@ class HashTagSearch extends React.Component {
     }
 
     textFieldChange(e) {
-        e.preventDefault();
-        console.log(text);
-    }
+        if (this.state.form.error === true) {
+            this._updateState('Go', false);
+        }
 
-    _updateButtonText(text) {
-        this.setState({
-            form: {
-                button: {
-                    text: text
-                }
-            }
-        });
+        this.hashTagEntry = e.target.value;
     }
 }
 

@@ -1,0 +1,23 @@
+$fullCardWidth: 500px;
+$borderWidth: 2px;
+$padding: 50px;
+$avatarWidth: 48px;
+$avatarMargin: 15px;
+
+.tweet {
+    width: $fullCardWidth;
+
+    .tweetAvatar {
+        width: $avatarWidth;
+    }
+
+    .tweetBody {
+        width: $fullCardWidth - $borderWidth - $padding - $avatarWidth - $avatarMargin;
+    }
+
+    .tweetMask {
+        width: 240px;
+        top: calc(50% - 20px);
+        left: calc(50% - 120px);
+    }
+}

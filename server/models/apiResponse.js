@@ -14,7 +14,6 @@ class APIResponse {
     }
 
     setSuccess(data) {
-        console.log('Data: ', data);
         this.result = data;
         this.status.code = 200;
         this.status.response = 'OK';
