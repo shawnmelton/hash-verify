@@ -1,0 +1,14 @@
+#hashTagForm {
+    button {
+        line-height: 54px;
+
+        &:hover {
+            border-color: $blue;
+        }
+
+        &:active {
+            background-color: $blue;
+            color: #fff;
+        }
+    }
+}

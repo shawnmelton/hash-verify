@@ -11,8 +11,7 @@ class AjaxRequest {
     async call() {
         const response = await fetch(this.url, {
             method: this.method,
-            headers: this.headers,
-            body: this.body
+            headers: this.headers
         });
             
         return response.json();

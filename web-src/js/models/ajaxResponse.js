@@ -23,3 +23,5 @@ class AjaxResponse {
         }
     }
 }
+
+module.exports = AjaxResponse;

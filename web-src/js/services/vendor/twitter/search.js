@@ -4,8 +4,8 @@ const AjaxResponse = require('../../../models/ajaxResponse');
 const appConfig = require('../../../config');
 
 class TwitterSearch {
-    async byHasTag(hashTag) {
-        const request = new GetRequest(config.API_URL + '/tweets/byHashTag')
+    async byHashTag(hashTag) {
+        const request = new GetRequest(appConfig.API_URL + '/tweets/byHashTag?hashTag='+ hashTag);
         const response = new AjaxResponse(await request.call());
 
         if (response.isValid() && response.hasError() === false) {
@@ -15,3 +15,5 @@ class TwitterSearch {
         return [];
     }
 }
+
+module.exports = TwitterSearch;
