@@ -1,3 +1,5 @@
+import 'whatwg-fetch';
+
 class AjaxRequest {
     constructor(url) {
         this.url = url;
