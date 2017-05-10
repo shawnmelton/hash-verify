@@ -12,10 +12,11 @@ class Tweet extends React.Component {
 
     cardClick(e) {
         e.preventDefault();
-
         this.setState({
             selected: !this.state.selected
         });
+
+        this.props.selectionCallback(this.props.data);
     }
 
     render() {

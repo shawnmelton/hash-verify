@@ -3,6 +3,7 @@
 .bgOffWhite { background-color: #eee; }
 .bgTransparent { background-color: rgba(0, 0, 0, 0); }
 .bgTransGreen { background-color: $transGreen; }
+.bgTransBlack { background-color: rgba(0, 0, 0, 0.5); }
 
 /* Borders */
 .noBorder { border: 0; }
@@ -54,6 +55,7 @@
 .pb50 { padding-bottom: 50px; }
 
 /* Margin */
+.center { margin: 0 auto; }
 .m10-15 { margin: 10px 15px; }
 .m20-15 { margin: 20px 15px; }
 .m20-25 { margin: 20px 25px; }
@@ -66,6 +68,9 @@
 .mb50 { margin-bottom: 50px; }
 .mt15 { margin-top: 15px; }
 .mt25 { margin-top: 25px; }
+.mt50 { margin-top: 50px; }
+.mt100 { margin-top: 100px; }
+.mt125 { margin-top: 125px; }
 .mr5 { margin-right: 5px; }
 .mr10 { margin-right: 10px; }
 .ml15 { margin-left: 15px; }
@@ -84,7 +89,6 @@
 .left0 { left: 0; }
 .right0 { right: 0; }
 .bottom0 { bottom: 0; }
-.center { margin: 0 auto; }
 
 /* Alignment */
 .left { float: left; }

@@ -2,6 +2,7 @@ import React from 'react';
 import TwitterSearch from '../services/vendor/twitter/search';
 import template from '../templates/components/hashTagStream';
 import storage from '../services/data/localStorage';
+import mapper from '../services/mappers/tweets';
 
 class HashTagStream extends React.Component {
     constructor(props) {
@@ -11,18 +12,21 @@ class HashTagStream extends React.Component {
 
         this.state = {
             tweets: [],
+            selectedTweet: null,
             error: this.hashTag === null
         };
     }
 
     async _loadTweets() {
         const request = new TwitterSearch();
-        this._updateState(await request.byHashTag(this.hashTag), false);
+        const tweets = await request.byHashTag(this.hashTag);
+        this._updateState(mapper.map(tweets), null, false);
     }
 
-    _updateState(tweets, error) {
+    _updateState(tweets, selectedTweet, error) {
         this.setState({
             tweets: tweets,
+            selectedTweet: selectedTweet,
             error: error
         });
     }
@@ -36,6 +40,10 @@ class HashTagStream extends React.Component {
     onReturnClick(e) {
         e.preventDefault();
         this.props.history.push('/');
+    }
+
+    onTweetSelection(tweet) {
+        this._updateState(this.state.tweets, tweet, false);
     }
 
     render() {

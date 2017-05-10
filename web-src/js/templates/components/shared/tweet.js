@@ -1,18 +1,4 @@
 import React from 'react';
-import dateFormatter from 'dateformat';
-
-const parseDate = (datetime) => {
-    const now = new Date();
-    if (dateFormatter(now, 'm/d/yyyy') === dateFormatter(datetime, 'm/d/yyyy')) {
-        return dateFormatter(datetime, 'h:MM TT');
-    }
-
-    if (dateFormatter(now, 'yyyy') === dateFormatter(datetime, 'yyyy')) {
-        return dateFormatter(datetime, 'mmm d');
-    }
-
-    return dateFormatter(datetime, 'mmm d, yyyy');
-}
 
 const template = (component) => {
     return (
@@ -20,17 +6,22 @@ const template = (component) => {
             component.cardClick(e);
         }}>
             <div className="left tweetAvatar mr15">
-                <img src={component.props.data.user.profile_image_url_https} className="widthFull borderRadius3" />
+                <img src={component.props.data.getAuthor().getAvatar()} className="widthFull borderRadius3" />
             </div>
             <div className="left tweetBody fs90">
                 <p className="clearFix mb5 txtDkGrey">
-                    <span className="block right txtGrey">{parseDate(component.props.data.created_at)}</span>
-                    <strong className="block left mr15">{component.props.data.user.name}</strong>
-                    <span className="block left txtGrey">@{component.props.data.user.screen_name}</span>
+                    <span className="block right txtGrey">{component.props.data.getFormattedCreatedDate()}</span>
+                    <strong className="block left mr15">{component.props.data.getAuthor().getName()}</strong>
+                    <span className="block left txtGrey">@{component.props.data.getAuthor().getScreenName()}</span>
                 </p>
-                <p className="lineHeight18">
-                    {component.props.data.text}
+                <p className="lineHeight18 mb10">
+                    {component.props.data.getText()}
                 </p>
+                {
+                    component.props.data.hasMedia() && component.props.data.getImage() !== null ?
+                        <img src={component.props.data.getImage()} className="widthFull mb15" />
+                        : ''
+                }
             </div>
             {
                 component.state.selected ?

@@ -21,3 +21,11 @@ $avatarMargin: 15px;
         left: calc(50% - 120px);
     }
 }
+
+.tweetAuthor {
+    width: 500px;
+
+    .tweetAuthorAvatar {
+        max-width: 150px;
+    }
+}
