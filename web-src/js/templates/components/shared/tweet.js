@@ -24,7 +24,7 @@ const template = (component) => {
                 }
             </div>
             {
-                component.state.selected ?
+                component.props.selected ?
                     <div className="absolute top0 left0 right0 bottom0 txtCenter bgTransGreen txtWhite fw800 txtUpperCase animateOpacityIn borderBox p20-25 shadow">
                         <p className="clearFix tweetMask absolute height40">
                             <span className="material-icons left mr5 block fs200">check</span>

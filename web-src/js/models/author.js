@@ -40,11 +40,18 @@ class Author {
     }
 
     getProfileUrl() {
-        return 'https://twitter.com/'+ this.userName;
+        return 'https://twitter.com/'+ this.userScreenName;
     }
 
     getScreenName() {
         return this.userScreenName;
+    }
+
+    isValidAccount() {
+        return (typeof this.bannerImage === 'string' && this.bannerImage.length > 0 && 
+                typeof this.description === 'string' && this.description.length > 0) ||
+            (this.followersCount > 15 && this.friendsCount <= (this.followersCount * 2)) ||
+            this.friendsCount > 2001;
     }
 
     setAvatar(value) {
@@ -64,15 +71,15 @@ class Author {
     }
 
     setFavoritesCount(value) {
-        this.favoritesCount = value;
+        this.favoritesCount = parseInt(value);
     }
 
     setFollowersCount(value) {
-        this.followersCount = value;
+        this.followersCount = parseInt(value);
     }
 
     setFriendsCount(value) {
-        this.friendsCount = value;
+        this.friendsCount = parseInt(value);
     }
 
     setUserName(value) {

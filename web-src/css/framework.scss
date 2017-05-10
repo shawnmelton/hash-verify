@@ -1,5 +1,7 @@
 /* Backgrounds */
 .bgWhite { background-color: #fff; }
+.bgGreen { background-color: $green; }
+.bgBlue { background-color: $blue; }
 .bgOffWhite { background-color: #eee; }
 .bgTransparent { background-color: rgba(0, 0, 0, 0); }
 .bgTransGreen { background-color: $transGreen; }
@@ -65,6 +67,7 @@
 .mb10 { margin-bottom: 10px; }
 .mb15 { margin-bottom: 15px; }
 .mb25 { margin-bottom: 25px; }
+.mb35 { margin-bottom: 35px; }
 .mb50 { margin-bottom: 50px; }
 .mt15 { margin-top: 15px; }
 .mt25 { margin-top: 25px; }
@@ -133,7 +136,7 @@
     display: table;
     clear: both;
 }
-
+.noStyle { list-style: none; }
 .cursor { cursor: pointer; }
 .borderBox { box-sizing: border-box; }
 

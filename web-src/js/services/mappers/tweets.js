@@ -21,6 +21,7 @@ class TweetsMapper {
             tweet.setAuthor(author);
             tweet.setCreatedDate(item.created_at);
             tweet.setFavoritesCount(item.favorite_count);
+            tweet.setId(item.id_str);
             tweet.setMedia(item.entities);
             tweet.setRetweetsCount(item.retweet_count);
             tweet.setText(item.text);

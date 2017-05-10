@@ -5,6 +5,7 @@ class Tweet {
         this.author = null;
         this.createdDate = null;
         this.favoritesCount = 0;
+        this.id = 0;
         this.media = [];
         this.retweetsCount = 0;
         this.text = null;
@@ -29,6 +30,10 @@ class Tweet {
         }
 
         return dateFormatter(this.createdDate, 'mmm d, yyyy');
+    }
+
+    getId() {
+        return this.id;
     }
 
     getImage() {
@@ -65,6 +70,10 @@ class Tweet {
 
     setFavoritesCount(value) {
         this.favoritesCount = value;
+    }
+
+    setId(value) {
+        this.id = value;
     }
 
     setRetweetsCount(value) {
