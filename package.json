@@ -23,7 +23,6 @@
   "homepage": "https://github.com/shawnmelton/hudl-proxy-layer#readme",
   "dependencies": {
     "express": "^4.15.2",
-    "grunt-contrib-clean": "^1.1.0",
     "history": "^4.6.1",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
@@ -47,6 +46,7 @@
     "grunt-contrib-uglify": "^2.0.0",
     "grunt-embed": "^0.2.1",
     "grunt-es6-transpiler": "^1.0.2",
+    "grunt-contrib-clean": "^1.1.0",
     "vinyl-source-stream": "^1.1.0"
   }
 }
