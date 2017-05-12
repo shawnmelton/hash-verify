@@ -1,4 +1,4 @@
-const AjaxRequest = require('./AjaxRequest');
+const AjaxRequest = require('./ajaxRequest');
 
 class GetRequest extends AjaxRequest {
     constructor(url) {
